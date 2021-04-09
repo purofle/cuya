@@ -1,11 +1,10 @@
 ---
 title: LaTex公式基础入门
-data: 2021-1-29 22:29:37
-tags_:
- - markdown
- - latex
+date: 2021-1-29 22:29:37
 categories:
  - markdown
+tag:
+ - latex
 ---
 
 [[toc]]
