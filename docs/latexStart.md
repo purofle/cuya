@@ -3,7 +3,7 @@ title: LaTex公式基础入门
 date: 2021-1-29 22:29:37
 categories:
  - markdown
-tag:
+tags:
  - latex
 ---
 

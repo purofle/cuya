@@ -1,7 +1,7 @@
 ---
 title: 我的python基础巩固
 date: 2021-4-5 21:38:37
-tag:
+tags:
  - python
 categories:
  - python
