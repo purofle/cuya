@@ -7916,8 +7916,8 @@ uglify-js@3.4.x:
     commander "~2.19.0"
     source-map "~0.6.1"
 
-underscore@^1.8.3:
-  version "1.12.0"
+underscore@^1.12.1:
+  version "1.12.1"
   resolved "https://registry.npm.taobao.org/underscore/download/underscore-1.12.0.tgz#4814940551fc80587cef7840d1ebb0f16453be97"
   integrity sha1-SBSUBVH8gFh873hA0euw8WRTvpc=
 
