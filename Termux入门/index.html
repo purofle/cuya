@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="purofle"><meta name="copyright" content="purofle"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>Termux 入门 | Cuya</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.24/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_j5gk85dg4pf.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link id="light-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css" media="(prefers-color-scheme: light)"><link id="dark-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-tomorrow.css" media="(prefers-color-scheme: dark)"><link rel="icon" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"cuya.xyz","root":"/","title":"cuya","version":"1.6.1","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-ZV55RJZ3ML"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZV55RJZ3ML');
+}</script><meta name="description" content="系统要求 Android 7.0 - 11.0 CPU: AArch64, ARM, i686, x86_64 至少剩余 200 MB 的储存空间（不包括 SD 卡） 注意：Termux 不支持不带有 NEON SIMD 支持的 ARM CPU。  安装目前，最好的方法是去F-droid安装，对于 F-droid 的使用，这里不多做介绍。输入法本人推荐使用讯飞输入法的搜狗模式，或使用下面的搜狗输入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Termux 入门">
+<meta property="og:url" content="https://cuya.xyz/Termux%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="Cuya">
+<meta property="og:description" content="系统要求 Android 7.0 - 11.0 CPU: AArch64, ARM, i686, x86_64 至少剩余 200 MB 的储存空间（不包括 SD 卡） 注意：Termux 不支持不带有 NEON SIMD 支持的 ARM CPU。  安装目前，最好的方法是去F-droid安装，对于 F-droid 的使用，这里不多做介绍。输入法本人推荐使用讯飞输入法的搜狗模式，或使用下面的搜狗输入">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-19T09:52:49.000Z">
+<meta property="article:modified_time" content="2021-06-27T04:58:46.780Z">
+<meta property="article:author" content="purofle">
+<meta property="article:tag" content="termux">
+<meta name="twitter:card" content="summary"><script src="/js/ui/mode.js"></script></head><body><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="purofle"><img width="96" loading="lazy" src="/yun.png" alt="purofle"></a><div class="site-author-name"><a href="/about/">purofle</a></div><span class="site-name">Cuya</span><sub class="site-subtitle">咕咕咕~</sub><div class="site-desciption">一个大鸽子的Blog.</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">5</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">2</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">4</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=Ww2k5huEU2XtOx_PiwNb6NOPQRqSNNct&amp;jump_from=webapi" title="QQ" target="_blank" style="color:undefined"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/purofle" title="Github" target="_blank" style="color:undefined"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%A6%81%E6%B1%82"><span class="toc-number">1.</span> <span class="toc-text">系统要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">输入法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%90%AF%E5%8A%A8"><span class="toc-number">4.</span> <span class="toc-text">第一次启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8D%A2%E6%BA%90"><span class="toc-number">4.1.</span> <span class="toc-text">换源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">4.2.</span> <span class="toc-text">更换主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2-sh"><span class="toc-number">4.3.</span> <span class="toc-text">更换 sh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B3%E8%AF%B7%E8%AE%BF%E9%97%AE%E5%86%85%E9%83%A8%E5%82%A8%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E6%9D%83%E9%99%90"><span class="toc-number">4.4.</span> <span class="toc-text">申请访问内部储存空间的权限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E9%80%89%E6%8B%A9"><span class="toc-number">5.</span> <span class="toc-text">编辑器的选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E5%88%86%E8%AF%AD%E8%A8%80%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-number">6.</span> <span class="toc-text">部分语言运行环境的配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Python"><span class="toc-number">6.1.</span> <span class="toc-text">Python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-C-OC"><span class="toc-number">6.2.</span> <span class="toc-text">C&#x2F;C++&#x2F;OC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Swift"><span class="toc-number">6.3.</span> <span class="toc-text">Swift</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java"><span class="toc-number">6.4.</span> <span class="toc-text">Java</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://cuya.xyz/Termux%E5%85%A5%E9%97%A8/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="purofle"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Cuya"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Termux 入门</h1><div class="post-meta"><div class="post-time" style="display:inline-block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2021-06-19 17:52:49" itemprop="dateCreated datePublished" datetime="2021-06-19T17:52:49+08:00">2021-06-19</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2021-06-27 12:58:46" itemprop="dateModified" datetime="2021-06-27T12:58:46+08:00">2021-06-27</time></div><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/linux/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">linux</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/termux/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">termux</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h2 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h2><ul>
+<li>Android 7.0 - 11.0</li>
+<li>CPU: AArch64, ARM, i686, x86_64</li>
+<li>至少剩余 200 MB 的储存空间（不包括 SD 卡）<blockquote>
+<p>注意：<br>Termux 不支持不带有 NEON SIMD 支持的 ARM CPU。</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2>目前，最好的方法是去<a target="_blank" rel="noopener" href="https://f-droid.org/">F-droid</a>安装，对于 F-droid 的使用，这里不多做介绍。<h2 id="输入法"><a href="#输入法" class="headerlink" title="输入法"></a>输入法</h2>本人推荐使用讯飞输入法的搜狗模式，或使用下面的搜狗输入法小米版配置：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">位置</th>
+<th align="center">状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">中文联想</td>
+<td align="center">输入习惯</td>
+<td align="center">关</td>
+</tr>
+<tr>
+<td align="center">英文预测</td>
+<td align="center">输入习惯</td>
+<td align="center">关</td>
+</tr>
+<tr>
+<td align="center">自动句首大写</td>
+<td align="center">输入习惯</td>
+<td align="center">关</td>
+</tr>
+<tr>
+<td align="center">自动锁定大写</td>
+<td align="center">输入习惯</td>
+<td align="center">开</td>
+</tr>
+<tr>
+<td align="center">成对符号自动匹配</td>
+<td align="center">输入习惯</td>
+<td align="center">关</td>
+</tr>
+</tbody></table>
+<h2 id="第一次启动"><a href="#第一次启动" class="headerlink" title="第一次启动"></a>第一次启动</h2><h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p>换源是非常重要的一步，它关系到你以后的使用体验。在新版的 Termux 中，直接执行<code>termux-change-repo</code>，使用<kbd>↑</kbd>和<kbd>↓</kbd>进行移动光标，使用<kbd>Space</kbd>来进行选择。<br>选中<code>Main repository</code>，<code>Game repository</code>，<code>Science repository</code>后，使用<kbd>Enter</kbd>进行确定。跳到第二个界面（选镜像）后，选中<code>Mirrors by BFSU</code>按下<kbd>Enter</kbd>即可。</p>
+<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><blockquote>
+<p>默认的 Termux 主题，黑底白字，很难看，其实换掉它非常简单。</p>
+</blockquote>
+<p>在终端内，在任意处长按，点击<code>more...</code>，选择<code>Style</code>，如果出现<code>Termux:Styling</code>未安装之类的提示，选择<code>INSTALL</code>，点击用 F-droid 打开，安装即可。安装后再次找到<code>Style</code>就能直接进行字体跟颜色的配置。</p>
+<h3 id="更换-sh"><a href="#更换-sh" class="headerlink" title="更换 sh"></a>更换 sh</h3><blockquote>
+<p>默认的 bash 补全很不舒服，这里我推荐使用 zsh。<br>zsh 安装可以直接使用 pkg</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">pkg install zsh -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装 OhMyZsh：</p>
+<pre class="line-numbers language-none"><code class="language-none">sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="申请访问内部储存空间的权限"><a href="#申请访问内部储存空间的权限" class="headerlink" title="申请访问内部储存空间的权限"></a>申请访问内部储存空间的权限</h3><pre class="line-numbers language-none"><code class="language-none">termux-setup-storage<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>执行后，会自动生成<code>storage</code>文件夹，可以直接通过<code>storage</code>访问内部储存空间。</p>
+<h2 id="编辑器的选择"><a href="#编辑器的选择" class="headerlink" title="编辑器的选择"></a>编辑器的选择</h2><p>目前，主要有四种编辑器可供选择：</p>
+<ul>
+<li>Vim<br>神级编辑器 vim，termux 的源里自带的 8.2 版本的 vim，安装和使用都很方便：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pkg <span class="token function">install</span> <span class="token function">vim</span> -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>Nvim<br>vim 的衍生品，做了一些十分游泳的修改：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pkg <span class="token function">install</span> nvim -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>Emacs<br>一个非常牛逼的<del>操作系统</del>编辑器，自带包管理器以及各种各样的东西，编写插件的语言基于 lisp，扩展性极高：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pkg <span class="token function">install</span> emacs -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>Nano<br>简单，易用的编辑器，快捷键都有提示，适合新手过渡：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pkg <span class="token function">install</span> <span class="token function">nano</span> -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="部分语言运行环境的配置"><a href="#部分语言运行环境的配置" class="headerlink" title="部分语言运行环境的配置"></a>部分语言运行环境的配置</h2><blockquote>
+<p>这篇只针对运行环境，对于开发环境的配置，之后我会写一篇新文章细说。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p>Termux 官方源里自带的版本是 3.9.5，可以直接使用 pkg 安装：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pkg <span class="token function">install</span> python -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>不要尝试手动编译 Python3.10！浪费时间且浪费生命。</p>
+</blockquote>
+<h3 id="C-C-OC"><a href="#C-C-OC" class="headerlink" title="C/C++/OC"></a>C/C++/OC</h3><p>C/C++/OC 都可以统一使用 termux 官方编译好的 clang，安装也很简单：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pkg <span class="token function">install</span> clang -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装好后，可以使用<code>clang --version</code>查看下版本：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ clang --version
+clang version <span class="token number">12.0</span>.0
+Target: aarch64-unknown-linux-android24
+Thread model: posix
+InstalledDir: /data/data/com.termux/files/usr/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Swift"><a href="#Swift" class="headerlink" title="Swift"></a>Swift</h3><p>Swift 本是苹果专用的开发语言，开源后已经成功移植到 Termux 上。它的安装也非常简单：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pkg <span class="token function">install</span> swift -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装后建议进行一次编译测试，首先需要把下面的内容写入到任意一个<code>.swift</code>后缀的文件里：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Hello, World"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后就可以通过<code>swiftc path/to/file</code>进行编译，一般来说，无报错即为通过。</p>
+<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>Java 不在官方源内，所以安装较为麻烦。这里我推荐使用<a target="_blank" rel="noopener" href="https://hub.fastgit.org/Lzhiyong/termux-ndk">termux-ndk</a>编译好的 openjdk11。<br>安装方法：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> -p <span class="token variable">$PREFIX</span>/share/openjdk11.0.1
+<span class="token function">curl</span> https://hub.fastgit.org/Lzhiyong/termux-ndk/releases/download/openjdk/openjdk-11.0.1.tar.xz -L -o <span class="token variable">$PREFIX</span>/share/openjdk11.0.1/openjdk-11.0.1.tar.xz <span class="token comment"># 下载</span>
+<span class="token builtin class-name">cd</span> <span class="token variable">$PREFIX</span>/share/openjdk11.0.1
+<span class="token function">tar</span> -xvf openjdk-11.0.1.tar.xz
+<span class="token function">cp</span> -r openjdk-11.0.1/* <span class="token variable">$PREFIX</span>/share/openjdk11.0.1/
+<span class="token function">rm</span> -rf openjdk-11.0.1*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样以后，只需要将$PREFIX/share/openjdk11.0.1 加入 PARH 即可。</p>
+</div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>purofle</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://cuya.xyz/Termux%E5%85%A5%E9%97%A8/" title="Termux 入门">https://cuya.xyz/Termux%E5%85%A5%E9%97%A8/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/%E7%BB%99%E4%BD%A0%E7%9A%84Archlinux%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%90%AF%E5%8A%A8%E7%95%8C%E9%9D%A2/" rel="next" title="给你的Archlinux增加一个好看的启动界面"><span class="post-nav-text">给你的Archlinux增加一个好看的启动界面</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>要不要和我说些什么？</span><br></div><style>.utterances {
+  max-width: 100%;
+}</style><script src="https://utteranc.es/client.js" repo="purofle/cuya" issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async></script></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> purofle</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.6.1</span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a></div></body></html>
