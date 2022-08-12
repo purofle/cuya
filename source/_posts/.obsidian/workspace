@@ -1,0 +1,97 @@
+{
+  "main": {
+    "id": "4039bc82df413737",
+    "type": "split",
+    "children": [
+      {
+        "id": "424015ef58c971c6",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "给你的Archlinux增加一个好看的启动界面.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a377fd8d54d59c3d",
+    "type": "split",
+    "children": [
+      {
+        "id": "9648e43231d63ed3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "45d713166a785a37",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "abb0da8da53e8da3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#tools",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": true,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "cb9376ffa433783e",
+    "type": "split",
+    "children": [
+      {
+        "id": "97273742504cbabd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "282a6c7f41c39a94",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "给你的Archlinux增加一个好看的启动界面.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "424015ef58c971c6",
+  "lastOpenFiles": [
+    "给你的Archlinux增加一个好看的启动界面.md",
+    "cloc.md",
+    "Termux入门.md",
+    "python.md",
+    "gpg.md"
+  ]
+}
