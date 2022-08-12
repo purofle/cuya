@@ -292,174 +292,23 @@ comments:
   title: <i class='fa-solid fa-comments'></i> 评论
   subtitle:
   service: giscus
-  # 可选评论系统 #
-
-  # artalk
-  # https://artalk.js.org/
-  # https://github.com/ArtalkJS/Artalk
-  artalk:
-    js: https://yours-artalk-domain/dist/Artalk.js   # or https://unpkg.com/artalk@2.2.8/dist/Artalk.js
-    css: https://yours-artalk-domain/dist/Artalk.css # or https://unpkg.com/artalk@2.2.8/dist/Artalk.css
-    server: https://yours-artalk-domain    # 修改为自建的后端服务地址
-    path:  # 全局评论地址
-    placeholder: # 评论占位
-    # artalk 有三类图片：1.上传至服务端 2.上传至服务端后利用upgit上传至图床 3.前端上传至图床（本配置为此类）
-    # 配置此项时将覆盖服务端上传能力
-    imageUploader:
-      # 以兰空图床为例，下列填写内容为：
-      # url: 'https://xxxxxx/api/v1/upload'
-      # token: 'Bearer xxxxxxxxxxxxxx'
-      # resp: 'data.links.url'
-      api: # 图床地址
-      token: # 图床验证
-      resp: # 图片地址返回值的字段
-    # 更多置项可在 Artalk 后端进行配置，详见 https://artalk.js.org/guide/backend/fe-control.html
-    # 也可以在此处继续参考上方例子进行配置，不建议重写配置的字段除上方所述外还有：
-    # [el, useBackendConf, pageKey, pageTitle, site, darkMode, pvEl, imgUploader]
-
   # giscus
   # https://giscus.app
   # https://github.com/laymonage/giscus
   giscus:
     # 以下配置按照 yml 格式增删填写即可
-    # repo: xxx/xxx
-    # repo-id: xxx
-    # category: xxx
-    # category-id: xxx
-    # mapping: "pathname"
+    repo: purofle/cuya
+    repo-id: R_kgDOHzxElA
+    category: Announcements
+    category-id: DIC_kwDOHzxElM4CQxJd
+    mapping: "pathname"
     # reactions-enabled: "1"
     # emit-metadata: "0"
-    # lang: "zh-CN"
+    lang: "zh-CN"
     # 以上配置按照 yml 格式增删填写即可
     theme:
-      light: "light" # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/light.css
+      # light: "light" # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/light.css
       dark: "dark" # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/dark.css
-
-  # beaudar
-  # https://beaudar.lipk.org/
-  beaudar:
-    repo: xxx/xxx
-    issue-term: pathname
-    issue-number:
-    branch: main
-    position: top
-    order: desc
-    theme:
-      light: github-light
-      dark: github-dark
-    label: ✨💬✨
-
-  # utterances
-  # https://utteranc.es/
-  utterances:
-    repo: xxx/xxx
-    issue-term: pathname
-    issue-number:
-    theme:
-      light: github-light
-      dark: github-dark
-    label: ✨💬✨
-
-  # Disqus
-  # https://disqus.com
-  disqus:
-    shortname:
-    # optional
-    autoload: false
-    path: # 全局评论地址
-
-  # DisqusJS
-  # https://github.com/SukkaW/DisqusJS
-  disqusjs:
-    path: # 全局评论地址
-    js: https://unpkg.com/disqusjs@1.3/dist/disqus.js
-    css: https://unpkg.com/disqusjs@1.3/dist/disqusjs.css
-    # 配置项按照yml格式继续填写即可 除了 [siteName url identifier] 选项
-    #shortname:
-    #api:
-    #apikey:
-    #admin:
-    #nesting:
-
-  # Gitalk
-  # https://gitalk.github.io/
-  gitalk:
-    js: https://unpkg.com/gitalk@1/dist/gitalk.min.js
-    # 配置项按照yml格式继续填写即可 除了 [id distractionFreeMode] 选项
-    clientID:
-    clientSecret:
-    repo:
-    owner:
-    admin: # []
-    path: # 全局评论地址
-
-  # Vssue 暂不支持Pjax
-  # https://vssue.js.org/zh/
-  vssue:
-    js: https://cdn.jsdelivr.net/gh/meteorlxy/vssue@1.4.4/packages/vssue/dist/vssue.github.min.js
-    css: https://cdn.jsdelivr.net/gh/meteorlxy/vssue@1.4.4/packages/vssue/dist/vssue.min.css
-    vue: https://cdn.jsdelivr.net/gh/vuejs/vue@2.6.11/dist/vue.runtime.min.js
-    owner:
-    repo:
-    clientId:
-    clientSecret:
-
-  # LiveRe 暂不支持Pjax
-  # https://www.livere.com
-  livere:
-    uid:
-
-  # Isso
-  # https://posativ.org/isso/
-  isso:
-    url: https://example.com/(path/)
-    src: https://example.com/(path/)js/embed.min.js
-    css:
-    gravatar:
-
-  # HashOver 暂不支持Pjax
-  # https://www.barkdull.org/software/hashover
-  hashover:
-    src: https://example.com/(path/)comments.php
-
-  # Twikoo
-  # https://twikoo.js.org/
-  twikoo:
-    js: https://unpkg.com/twikoo@latest # 建议锁定版本
-    path: # 全局评论地址
-    # 其他配置项按照yml格式继续填写即可 除了 [el path] 选项
-    envId: xxxxxxxxxxxxxxx # 腾讯云环境id
-    placeholder: #全局评论占位，也可以在管理面板中的配置管理处设置（此处优先级更高）
-
-  # Waline
-  # https://waline.js.org/
-  waline:
-    js: https://unpkg.com/@waline/client@v2/dist/waline.js
-    css: https://unpkg.com/@waline/client@v2/dist/waline.css
-    path: # 全局评论地址 目前设置全局评论地址后visitor失效,这是waline的问题
-    placeholder: # 评论占位提示
-    serverURL: # Waline 的服务端地址（必填） 测试用地址: https://waline.vercel.app
-    imageUploader:
-      # 以兰空图床为例，下列填写内容为：
-      # url: https://xxxxxx/api/v1/upload
-      # token: Bearer xxxxxxxxxxxxxx
-      # resp: data.links.url
-      api:   # 图床地址
-      token: # 图床验证
-      resp:  # 图片地址返回值的字段
-    pageview: true # 浏览量统计
-    comment: true  # 评论数统计
-    # 其他配置项按照yml格式继续填写即可 除了 [el path imageUploader] 选项
-    # 组件属性地址：https://waline.js.org/reference/component.html
-    # meta: ['nick', 'mail', 'link']
-
-  # Discuss
-  # https://discuss.js.org
-  discuss:
-    js: https://cdn.jsdelivr.net/npm/discuss/dist/Discuss.js # 建议锁定版本
-    serverURLs: # Discuss server address url
-    # https://discuss.js.org/Quick-Start.html#path
-
 
 ############################### Comments ############################### > end
 
