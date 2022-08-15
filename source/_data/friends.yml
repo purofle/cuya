@@ -1,7 +1,7 @@
 - group: # 分组标题
   description:  # 分组描述
   items:
-    - title: K1t3AB's Homepage # 名称
+    - title: kiteAB's Homepage # 名称
       avatar: https://blog.kiteab.me/images/avatar.png # 头像
       url: https://kiteab.me/ # 链接
       screenshot: # 截图
