@@ -470,8 +470,10 @@ site_footer:
   # analytics using leancloud
   analytics: >
     <br />
-  # site copyright
+  # site copyrigh
   copyright: '[Copyright © since 2021 Purofle.](/)'
+  # info
+  info: '<a href="https://icp.gov.moe/?keyword=20228718" target="_blank">萌ICP备20228718号</a>'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
 ############################### Site Footer ############################### > end
