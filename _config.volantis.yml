@@ -455,7 +455,7 @@ tag_plugins:
 ############################### Site Footer ############################### > start
 site_footer:
   # layout of footer: [aplayer, social, license, info, copyright]
-  layout: [aplayer, social, license, analytics, info, copyright]
+  layout: [aplayer, social, license, analytics, info, copyright, moe]
   social:
     - icon: #fa-solid fa-rss
       url:
@@ -472,6 +472,8 @@ site_footer:
     <br />
   # site copyright
   copyright: '[Copyright © since 2021 Purofle.](/)'
+  # info
+  moe: '<a href="https://icp.gov.moe/?keyword=20228718" target="_blank">萌ICP备20228718号</a>'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
 ############################### Site Footer ############################### > end
