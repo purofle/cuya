@@ -128,6 +128,9 @@ cover:
       img:
       icon: fa-solid fa-link
       url: friends/
+    - name: 关于
+      icon: fa-solid fa-info-circle
+      url: about/
 
 ############################### Cover ############################### > end
 
