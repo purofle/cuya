@@ -8,14 +8,14 @@ twikoo:
 ---
 ## 关于我
 
-平平无奇的一个人罢了。
+男的，高中生，很菜。
 
 ---
 
 我的个人面板:
 
-![](https://raw.githubusercontent.com/purofle/github-stats/master/generated/overview.svg)
+![](https://github-readme-stats.vercel.app/api?username=purofle&show_icons=true&include_all_commits=true&theme=buefy&hide_border=true)
 ![](https://genshin-card.getloli.com/rand/275401245.png)
 
 ## 写过/用过的各种语言:
-![](https://raw.githubusercontent.com/purofle/github-stats/master/generated/languages.svg)
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=purofle&layout=compact&theme=buefy&hide_border=true)

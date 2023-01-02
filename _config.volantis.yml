@@ -117,13 +117,17 @@ cover:
   # background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
   title: 'Purofle的Blog'
-  subtitle: ''
+  subtitle: '不定时的写一些没有营养的东西'
   search: 某人的个人Blog # search bar placeholder
   features:
     - name: 主页
       icon: #
       img: volantis-static/media/twemoji/assets/svg/1f5c3.svg # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg
       url: /
+    - name: 友链
+      img:
+      icon: fa-solid fa-link
+      url: friends/
 
 ############################### Cover ############################### > end
 
@@ -197,7 +201,7 @@ article:
           default: type1  # 默认授权声明
           #############################
           # 你可以在文章的 front-matter 覆盖默认版权声明
-          # 配置示例（均可选）： 
+          # 配置示例（均可选）：
           # copyright:
           #   type: type3           # 当前文章版权声明类型
           #   author: 张三          # 本文作者
@@ -206,16 +210,16 @@ article:
           #     url:                # 原文出处 - 链接
           #############################
           rules:
-            type1: 
+            type1:
               text: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh#" target="_blank">CC BY-NC-SA 4.0</a>
               desc: 署名-非商业性使用-相同方式共享 4.0 国际。
-            type2: 
+            type2:
               text: 禁止转载引用
               desc: 除非获得原作者的单独授权，任何第三方不得转载！
-            type3: 
+            type3:
               text: 原作许可协议
               desc: 本文转载自他站，转载或引用本文时，请遵守原作许可协议！
-            type4: 
+            type4:
               text: 来自互联网
               desc: 本文来自互联网，未知来源，侵权请联系删除。
             type5:
@@ -522,7 +526,7 @@ plugins:
 
   # 图片懒加载
   # https://www.npmjs.com/package/vanilla-lazyload
-  # tips: 
+  # tips:
   # 这里是主题自带的图片懒加载, 实现方案位于 /scripts/filters/z-lazyload ; srcset 属性的的优先级比 src 属性要高, 注意 srcset 存放了懒加载占位图,  src 存放了原图
   # 在支持 srcset 的浏览器或者 RSS 阅读器(还会有人使用老旧的阅读器?)上会优先读取 srcset 加载的图片(懒加载占位图), 对于 RSS 中图片丢失变成懒加载占位图的问题, 建议 自行使用脚本移除 srcset 属性 或 关闭图片懒加载 或 在 RSS 中插入 vanilla-lazyload
   lazyload:
@@ -719,7 +723,7 @@ plugins:
     css: volantis-static/libs/fcircle/fcircle.css
     js: volantis-static/libs/fcircle/fcircle.js
 
-  # 消息提示 
+  # 消息提示
   # izitoast@1.4.0
   message:
     enable: true
@@ -800,7 +804,7 @@ rightmenus:
   # link: 跳转链接
   # event: 事件，当输入内容不为内置事件时，作 JavaScript 代码执行
   # group: 菜单项所处分组名称
-  # 注： 
+  # 注：
   # 1. link/event 二选一，同时出现时仅处理 link
   # 2. 内置事件列表： copyText, copyLink, copyPaste, copyAll, copyCut, copyImg, printMode, readMode
   # 3. 内置组列表：navigation, inputBox, seletctText, elementCheck, elementImage, articlePage
@@ -978,7 +982,7 @@ color_scheme:
     list_hl: 'mix($color-theme, #000, 80)'
     # 辅助性文字
     meta: '#888'
-    
+
     # 版权卡片背景色
     copyright_bkg: '#f5f5f5'
   # ------------
