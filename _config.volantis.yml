@@ -117,7 +117,7 @@ cover:
   # background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
   title: 'Purofle的Blog'
-  subtitle: '不定时的写一些没有营养的东西'
+  subtitle: '不定时的写一些没有营养的东西，随缘更新。'
   search: 某人的个人Blog # search bar placeholder
   features:
     - name: 主页
